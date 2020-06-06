@@ -1,7 +1,16 @@
-import csv
+import urllib.request
 
 import data_structure
-import urllib.request
+
+
+def get_highest_prices(stock_names):
+    prices = []
+    for stock_name in stock_names:
+        data = urllib.request.urlopen(url.format(stock_name)).read().decode()
+        price_data = data.split()
+        prices.append(price_data[1].split(',')[2])
+    return prices
+
 
 portfolio = data_structure.read_portfolio('Data/portfolio.csv')
 
@@ -20,25 +29,13 @@ namesMore100 = [holding['name'] for holding in portfolio if holding['shares'] > 
 print('Name of Shares more than 100: ', namesMore100)
 
 url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={}&apikey=HQMH8SGNJ98IL7D9&datatype=csv'
+highest_prices = get_highest_prices(unique_names)
 
-for unique_name in unique_names:
-    data = urllib.request.urlopen(url.format(unique_name)).read()
-    print('Data: ', data)
-    price_data = data.split()
-    print('Price Data: ', price_data)
-    first_row = price_data[2]
-    print('First Row: ', price_data)
-    # for row in price_data:
-    #     r = row.split()
-    #     print('Split Row: ', r)
-    #
+#for name, price in zip(unique_names, highest_prices):
+#    print(name, '=', price)
 
-    #high = price_data[1][2]
-    #print('High Value: ', high)
-    #rows = csv.reader(io.StringIO(data))
-    #headers = next(rows)  # Skip header
-    #for row in rows:
-    #    print(row)
+prices = dict(zip(unique_names, highest_prices))
+print('Prices: ', prices)
 
 total = sum(cost)
 print(total)
