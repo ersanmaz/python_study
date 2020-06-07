@@ -1,6 +1,6 @@
 import urllib.request
 
-from misc import data_structure
+from misc.port import read_portfolio
 
 
 def get_highest_prices(stock_names):
@@ -12,7 +12,7 @@ def get_highest_prices(stock_names):
     return prices
 
 
-portfolio = data_structure.read_portfolio('data/portfolio.csv')
+portfolio = read_portfolio('data/portfolio.csv')
 
 cost = [holding['shares'] * holding['price'] for holding in portfolio]
 print('Costs: ', cost)

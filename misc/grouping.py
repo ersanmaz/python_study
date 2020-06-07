@@ -1,9 +1,10 @@
 import itertools
 
 from misc import data_structure
+from misc.port import read_portfolio
 
 # With Sorting
-portfolio = data_structure.read_portfolio('data/portfolio.csv')
+portfolio = read_portfolio('data/portfolio.csv')
 portfolio.sort(key=lambda item: item['name'])
 by_name = {name: list(items) for name, items in itertools.groupby(portfolio, key=lambda holding: holding['name'])}
 print('Group IBM: ', by_name['IBM'])

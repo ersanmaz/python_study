@@ -1,6 +1,6 @@
-from misc import data_structure
+from misc.port import read_portfolio
 
-portfolio = data_structure.read_portfolio('data/portfolio.csv')
+portfolio = read_portfolio('data/portfolio.csv')
 print('In file order:')
 for p in portfolio: print(p)
 
