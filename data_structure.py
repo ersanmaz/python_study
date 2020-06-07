@@ -37,15 +37,3 @@ def read_portfolio(filename, errors='warn'):
             }
             portfolio.append(record)
     return portfolio
-
-
-portfolio = read_portfolio('Data/portfolio.csv')
-print(portfolio)
-
-total = 0.0
-#for name, date, shares, price in portfolio:
-#    total += shares * price
-for holding in portfolio:
-    total += holding['shares'] * holding['price']
-
-print('Total cost: ', total)
