@@ -1,7 +1,7 @@
 # port.py
 
 total = 0.0
-with open('Data/portfolio.csv', 'r') as f:
+with open('../data/portfolio.csv', 'r') as f:
     headers = next(f)           # Skip header
     for line in f:
         line = line.strip()     # strip whitespace

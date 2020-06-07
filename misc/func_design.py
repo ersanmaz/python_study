@@ -33,5 +33,5 @@ def portfolio_cost(filename, errors='warn'):
     return total_cost
 
 
-total = portfolio_cost('Data/missing.csv', errors='ignore')
+total = portfolio_cost('../data/missing.csv', errors='ignore')
 print('Total cost: ', total)
