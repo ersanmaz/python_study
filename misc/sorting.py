@@ -1,4 +1,4 @@
-from misc.port import read_portfolio
+from portie.port import read_portfolio
 
 portfolio = read_portfolio('data/portfolio.csv')
 print('In file order:')

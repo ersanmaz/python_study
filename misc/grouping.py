@@ -1,7 +1,7 @@
 import itertools
 
 from misc import data_structure
-from misc.port import read_portfolio
+from portie.port import read_portfolio
 
 # With Sorting
 portfolio = read_portfolio('data/portfolio.csv')

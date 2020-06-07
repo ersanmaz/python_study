@@ -1,6 +1,6 @@
 import urllib.request
 
-from misc.port import read_portfolio
+from portie.port import read_portfolio
 
 
 def get_highest_prices(stock_names):

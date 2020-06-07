@@ -1,4 +1,4 @@
-from misc import reader
+from . import reader
 
 
 def read_portfolio(filename, *, errors='warn'):
