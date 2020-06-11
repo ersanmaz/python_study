@@ -5,6 +5,9 @@ class Holding(object):
         self.shares = shares
         self.price = price
 
+    def __repr__(self):
+        return 'Holding({!r}, {!r}, {!r}, {!r})'.format(self.name, self.date, self.shares, self.price)
+
     def cost(self):
         return self.shares * self.price
 
