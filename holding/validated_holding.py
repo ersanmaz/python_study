@@ -12,6 +12,11 @@ class Holding(object):
         self.shares = shares
         self.price = price
 
+    def __setattr__(self, name, value):
+        if name not in {'name', 'date', 'shares', 'price'}:
+            raise AttributeError('No attribute {}', name)
+        super().__setattr__(name, value)
+
     def __repr__(self):
         return 'Holding({!r}, {!r}, {!r}, {!r})'.format(self.name, self.date, self.shares, self.price)
 
