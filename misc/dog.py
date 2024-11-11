@@ -6,7 +6,12 @@ class Dog(Animal):
         print("woof")
 
     def eat(self, food):
-        print(f"{self.name} is eating {food} appetitly.")
+        print(f"{self.name} is eating {food} appetit.")
+
+    def eat(self, food):
+        print(f"{self.name} is eating {food} very appetit.")
+    def eat(self, food):
+        print(f"{self.name} is eating {food} too appetit.")
 
 dog = Dog("Fido")
 dog.make_noise()
